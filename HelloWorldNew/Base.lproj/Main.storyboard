@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,35 +17,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, World!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MOV-HQ-uiv">
-                                <rect key="frame" x="62" y="142" width="251" height="38"/>
+                                <rect key="frame" x="62" y="142" width="251" height="37.5"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="32"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWk-aH-tt9">
-                                <rect key="frame" x="87.5" y="510.5" width="200" height="46.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-Ec-gUt">
+                                <rect key="frame" x="87.5" y="461" width="200" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWk-aH-tt9">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Show Text">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showTextButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="quY-ir-buV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE8-RX-yC7">
+                                        <rect key="frame" x="0.0" y="61" width="200" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Go2SVC">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="RXG-9p-WCE" kind="presentation" id="ZsD-Ji-8ar"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="tni-FM-HPl"/>
+                                    <constraint firstAttribute="width" constant="200" id="j3r-in-DcH"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Show Text">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="showTextButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="quY-ir-buV"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.66257926887522656" green="1" blue="0.72909982494216397" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="MOV-HQ-uiv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="142" id="3Dt-PV-dv4"/>
-                            <constraint firstItem="BWk-aH-tt9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9RC-Gt-qVU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BWk-aH-tt9" secondAttribute="bottom" constant="110" id="BrI-sn-bWO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LIa-Ec-gUt" secondAttribute="bottom" constant="100" id="ORB-Ol-CgI"/>
                             <constraint firstItem="MOV-HQ-uiv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="hou-HP-gDU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MOV-HQ-uiv" secondAttribute="trailing" constant="62" id="q1f-gT-UiI"/>
+                            <constraint firstItem="LIa-Ec-gUt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ssp-UD-huC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -56,5 +74,49 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="134.48275862068968"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="suo-ST-Kp2">
+            <objects>
+                <viewController id="RXG-9p-WCE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ylu-yG-faG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hp1-7u-Lwz">
+                                <rect key="frame" x="16" y="63" width="343" height="521"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SwiftImage" translatesAutoresizingMaskIntoConstraints="NO" id="6xf-gh-0KC">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="252.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Курс &quot;Мои первые приложения на Swift&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vf-Ng-vyw">
+                                        <rect key="frame" x="0.0" y="268.5" width="343" height="252.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lRP-jS-8Kx"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="Hp1-7u-Lwz" firstAttribute="top" secondItem="lRP-jS-8Kx" secondAttribute="top" constant="63" id="Vqb-SX-BFW"/>
+                            <constraint firstAttribute="bottom" secondItem="Hp1-7u-Lwz" secondAttribute="bottom" constant="63" id="YeL-11-pam"/>
+                            <constraint firstItem="Hp1-7u-Lwz" firstAttribute="leading" secondItem="lRP-jS-8Kx" secondAttribute="leading" constant="16" id="xPN-u9-pbU"/>
+                            <constraint firstAttribute="trailing" secondItem="Hp1-7u-Lwz" secondAttribute="trailing" constant="16" id="zNt-ja-CXe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBm-gg-eBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880.79999999999995" y="133.5832083958021"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="SwiftImage" width="640" height="640"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
